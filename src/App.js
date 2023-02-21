@@ -1,19 +1,23 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import Card from "./components/Card";
-import BackSupport from "./components/BackSupport";
-import Footer from "./components/Footer";
+import Home from "./components/Home";
+
+import LeaderBoard from "./components/LeaderBoard";
 // import './App.css';
 
 function App() {
   return (
     <div className="bg-black">
       <div className="image">
-      <Header />
-      <HeroSection />
-      <Card />
-      <BackSupport />
-      <Footer />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />}>
+              <Route index element={<Home />} />
+            </Route>
+            <Route path="/leaderboard" element={<LeaderBoard />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   );

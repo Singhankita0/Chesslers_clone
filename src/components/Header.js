@@ -1,5 +1,7 @@
 import React from "react";
 import { LoginIcon } from "../icons";
+import LeaderBoard from "./LeaderBoard";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -26,12 +28,12 @@ const Header = () => {
             </div>
           </div>
           <div className="flex gap-5">
-            <a
+            <Link
+              to="/leaderboard"
               className="font-semibold hover:text-orange-500 hover:underline underline-offset-4 duration-500 ease-in"
-              href="#"
             >
               Leaderboard
-            </a>
+            </Link>
             <div className="rounded-lg text-sm w-32 px-3 font-bold bg-yellow-400">
               <a
                 className="flex items-center justify-center w-full h-full"
