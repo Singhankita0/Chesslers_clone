@@ -19,7 +19,7 @@ const LeaderBoard = () => {
         setUser(result);
       });
   };
-  console.log(user)
+  console.log(user);
 
   return (
     <>
@@ -29,10 +29,10 @@ const LeaderBoard = () => {
             <h1 className="text-2xl font-bold">Leaderboard</h1>
             <div className="relative text-sm text-white">
               <button className="w-max cursor-pointer rounded-lg bg-gray-900 opacity-200 text-yellow-800">
-                <span className="flex items-center gap-2 p-2">
+                {/* <span className="flex items-center gap-2 p-2">
                   <span>Weekly</span>
                   <DropDownIcon />
-                </span>
+                </span> */}
               </button>
             </div>
           </div>
@@ -41,7 +41,10 @@ const LeaderBoard = () => {
             <div className="flex flex-col items-center gap-5 backdrop-blur-sm divide-y-2 divide-gray-400">
               {user.map((data) => {
                 return (
-                  <div key={data} className="flex flex-wrap items-center justify-between gap-2 md:gap-40 px-2 md:px-6 py-3 w-full">
+                  <div
+                    key={data}
+                    className="flex flex-wrap items-center justify-between gap-2 md:gap-40 px-2 md:px-6 py-3 w-full"
+                  >
                     <div className="flex w-60 md:w-max items-center justify-between md:gap-10">
                       <TrophyIcon />
                       <div className="h-10 w-10 overflow-hidden rounded-full object-contain">
@@ -51,14 +54,14 @@ const LeaderBoard = () => {
                           height="40"
                         />
                       </div>
-                      <a className="text-lg font-bold text-yellow-800 text-ellipsis md:w-40 overflow-hidden">{data.name}</a>
+                      <a className="text-lg font-bold text-yellow-800 text-ellipsis md:w-40 overflow-hidden">
+                        {data.name}
+                      </a>
                     </div>
                     <p className="font-extrabold">{data.address.city}</p>
                   </div>
                 );
               })}
-
-             
             </div>
           </div>
         </div>
